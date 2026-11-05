@@ -1,0 +1,15 @@
+# Entorno
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+
+# OS / editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

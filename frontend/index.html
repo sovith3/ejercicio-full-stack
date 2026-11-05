@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lecturas por dispositivo</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>Lecturas</h1>
+      <div class="controls">
+        <label class="field">
+          <span>Dispositivo</span>
+          <select id="device-select"></select>
+        </label>
+        <div class="field day-nav">
+          <span>Día (America/Santiago)</span>
+          <div class="day-nav__row">
+            <button id="prev-day" type="button" title="Día anterior">‹</button>
+            <input id="day-input" type="date" />
+            <button id="next-day" type="button" title="Día siguiente">›</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <p id="status" class="status" role="status" aria-live="polite"></p>
+
+    <main class="layout">
+      <section class="panel" aria-label="Resumen del día">
+        <div class="totals">
+          <div class="totals__item">
+            <span class="totals__label">Lecturas</span>
+            <strong id="total-readings">–</strong>
+          </div>
+          <div class="totals__item">
+            <span class="totals__label">Promedio</span>
+            <strong id="avg-value">–</strong>
+          </div>
+          <div class="totals__item">
+            <span class="totals__label">Sesiones</span>
+            <strong id="total-sessions">–</strong>
+          </div>
+        </div>
+        <h2 class="panel__title">Sesiones del día</h2>
+        <ol id="session-list" class="sessions"></ol>
+      </section>
+
+      <section class="panel panel--map" aria-label="Recorrido del día">
+        <div id="map" class="map"></div>
+      </section>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
